@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" layout:decorator="layout">
+<head th:include="layout :: htmlhead" th:with="title='Hello'">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="layout-fixed">
+<div th:fragment="navbar"  class="wrapper"  role="navigation">
+    <div th:replace="fragments/header :: header">Header</div>
+    <div th:replace="fragments/left :: left">left</div>
+    <div th:replace="fragments/sidebar :: sidebar">sidebar</div>
+    <div layout:fragment="content" id="content" ></div>
+    <div th:replace="fragments/footer :: footer">footer</div>
+</div>
+<div th:include="footer :: copy"></div>
+<div th:replace="footer :: copy"></div>
+</body>
+</html>
